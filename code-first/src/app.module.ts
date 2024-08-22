@@ -7,13 +7,14 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { BlogsModule } from './blogs/blogs.module';
 import { CommentsModule } from './comments/comments.module';
+import { join } from 'path';
 
 @Module({
   imports: [
     UsersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: true,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],

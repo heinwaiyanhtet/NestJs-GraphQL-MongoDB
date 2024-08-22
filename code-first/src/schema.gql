@@ -1,0 +1,72 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Blog {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Comment {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateBlogInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateCommentInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Mutation {
+  createBlog(createBlogInput: CreateBlogInput!): Blog!
+  createComment(createCommentInput: CreateCommentInput!): Comment!
+  createUser(createUserInput: CreateUserInput!): User!
+  removeBlog(id: Int!): Blog!
+  removeComment(id: Int!): Comment!
+  removeUser(id: Int!): User!
+  updateBlog(updateBlogInput: UpdateBlogInput!): Blog!
+  updateComment(updateCommentInput: UpdateCommentInput!): Comment!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  blog(id: Int!): Blog!
+  blogs: [Blog!]!
+  comment(id: Int!): Comment!
+  comments: [Comment!]!
+  user(id: Int!): User!
+  users: [User!]!
+}
+
+input UpdateBlogInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateCommentInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+type User {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
