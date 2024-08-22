@@ -19,7 +19,8 @@ export class UsersResolver {
   }
   
   @Query(() => User, { name: 'user' })
-  findOne(@Args('id', { type: () => Int }) id: string) {
+  findOne(@Args('id', { type: () => String }) id: string) {
+    console.log(`Querying for user with id: ${id}`);
     return this.usersService.findOne(id);
   }
 

@@ -22,16 +22,21 @@ export class UsersService {
   }
 
   async findAll() : Promise<User[]> {
+
     return this.prisma.user.findMany().then(users => {
-      console.log(users);  // Log the actual array of users
       return users;
     });
+
   }
 
   async findOne(id: string): Promise<User | null> {
-    return this.prisma.users.findUnique({
+
+    const user = await this.prisma.user.findUnique({
       where: { id },
     });
+    return user;
+
+    
   }
 
   async update(id: string, updateUserInput: UpdateUserInput): Promise<User> {

@@ -50,7 +50,7 @@ type Query {
   blogs: [Blog!]!
   comment(id: Int!): Comment!
   comments: [Comment!]!
-  user(id: Int!): User!
+  user(id: String!): User!
   users: [User!]!
 }
 
