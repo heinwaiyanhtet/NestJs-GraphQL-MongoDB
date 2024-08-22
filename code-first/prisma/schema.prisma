@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Blogs {
+model Blog {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   content    String
   created_at DateTime @db.Date
@@ -16,7 +16,7 @@ model Blogs {
   user_id    String   @db.ObjectId
 }
 
-model Comments {
+model Comment {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   blog_id    String   @db.ObjectId
   comment    String
@@ -24,7 +24,7 @@ model Comments {
   user_id    String   @db.ObjectId
 }
 
-model Users {
+model User {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   created_at DateTime @db.Date
   email      String
