@@ -17,6 +17,10 @@ import { PrismaModule } from './prisma/prisma.module';
     UsersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      installSubscriptionHandlers: true,
+      subscriptions: {
+        'graphql-ws': true
+      },
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
       playground: false,

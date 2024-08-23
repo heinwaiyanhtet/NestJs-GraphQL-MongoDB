@@ -39,7 +39,7 @@ type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   removeBlog(id: Int!): Blog!
   removeComment(id: Int!): Comment!
-  removeUser(id: Int!): User!
+  removeUser(id: String!): User!
   updateBlog(updateBlogInput: UpdateBlogInput!): Blog!
   updateComment(updateCommentInput: UpdateCommentInput!): Comment!
   updateUser(updateUserInput: UpdateUserInput!): User!
