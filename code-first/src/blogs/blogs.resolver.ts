@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int, Subscription, Context } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int, Subscription, Context, Directive } from '@nestjs/graphql';
 import { BlogsService } from './blogs.service';
 import { Blog } from './entities/blog.entity';
 import { CreateBlogInput } from './dto/create-blog.input';
@@ -17,6 +17,7 @@ export class BlogsResolver {
     return this.blogsService.create(createBlogInput);
   }
 
+  @Directive('@deprecated(reason: "This query will be removed in the next version")')
   @Query(() => [Blog], { name: 'blogs' })
   findAll() {
     return this.blogsService.findAll();

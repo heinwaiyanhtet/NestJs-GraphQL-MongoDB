@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int, Context, Subscription } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int, Context, Subscription, Directive } from '@nestjs/graphql';
 import { CommentsService } from './comments.service';
 import { Comment } from './entities/comment.entity';
 import { CreateCommentInput } from './dto/create-comment.input';
@@ -32,7 +32,6 @@ export class CommentsResolver {
       return newComment;
 
     }
-
 
 
   @Query(() => [Comment], { name: 'comments' })
