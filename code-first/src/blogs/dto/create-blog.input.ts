@@ -2,6 +2,16 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 
 @InputType()
 export class CreateBlogInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+
+
+  @Field()
+  title: string;
+
+  @Field()
+  content: string;
+
+  @Field()
+  user_id: string;
+
+
 }

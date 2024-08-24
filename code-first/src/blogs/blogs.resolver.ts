@@ -1,10 +1,14 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int, Subscription, Context } from '@nestjs/graphql';
 import { BlogsService } from './blogs.service';
 import { Blog } from './entities/blog.entity';
 import { CreateBlogInput } from './dto/create-blog.input';
 import { UpdateBlogInput } from './dto/update-blog.input';
+import { PubSub } from 'graphql-subscriptions';
 
-@Resolver(() => Blog)
+
+const pubSub = new PubSub();
+
+@Resolver((of) => Blog)
 export class BlogsResolver {
   constructor(private readonly blogsService: BlogsService) {}
 
@@ -32,4 +36,5 @@ export class BlogsResolver {
   removeBlog(@Args('id', { type: () => Int }) id: number) {
     return this.blogsService.remove(id);
   }
+
 }

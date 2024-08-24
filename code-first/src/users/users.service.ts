@@ -11,15 +11,14 @@ export class UsersService {
 
   async create(createUserInput: CreateUserInput): Promise<User> 
   {
-
-    return this.prisma.user.create({
-      data: {
-        username: createUserInput.username,
-        email: createUserInput.email,
-        password: createUserInput.password,
-        created_at: new Date(),
-      },
-    });
+      return this.prisma.user.create({
+        data: {
+          username: createUserInput.username,
+          email: createUserInput.email,
+          password: createUserInput.password,
+          created_at: new Date(),
+        },
+      });
   }
 
   async findAll() : Promise<User[]> {

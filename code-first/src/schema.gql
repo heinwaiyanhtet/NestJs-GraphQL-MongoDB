@@ -3,23 +3,41 @@
 # ------------------------------------------------------
 
 type Blog {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  content: String!
+  created_at: String!
+  id: String!
+  title: String!
+  updated_at: String!
+  user_id: String!
 }
 
 type Comment {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """Identifier for the blog post this comment is associated with"""
+  blog_id: String!
+
+  """The content of the comment"""
+  comment: String!
+
+  """Date and time when the comment was created"""
+  created_at: DateTime!
+
+  """Unique identifier for the comment"""
+  id: String!
+
+  """Identifier for the user who created the comment"""
+  user_id: String!
 }
 
 input CreateBlogInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  content: String!
+  title: String!
+  user_id: String!
 }
 
 input CreateCommentInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  blog_id: String!
+  comment: String!
+  user_id: String!
 }
 
 input CreateUserInput {
@@ -40,6 +58,7 @@ type Mutation {
   removeBlog(id: Int!): Blog!
   removeComment(id: Int!): Comment!
   removeUser(id: String!): User!
+  triggerTest: String!
   updateBlog(updateBlogInput: UpdateBlogInput!): Blog!
   updateComment(updateCommentInput: UpdateCommentInput!): Comment!
   updateUser(updateUserInput: UpdateUserInput!): User!
@@ -54,16 +73,22 @@ type Query {
   users: [User!]!
 }
 
+type Subscription {
+  simpleTest: String!
+}
+
 input UpdateBlogInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  content: String
   id: Int!
+  title: String
+  user_id: String
 }
 
 input UpdateCommentInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  blog_id: String
+  comment: String
   id: Int!
+  user_id: String
 }
 
 input UpdateUserInput {

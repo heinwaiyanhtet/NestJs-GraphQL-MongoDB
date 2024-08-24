@@ -16,4 +16,6 @@ describe('BlogsResolver', () => {
   it('should be defined', () => {
     expect(resolver).toBeDefined();
   });
+  
 });
+
